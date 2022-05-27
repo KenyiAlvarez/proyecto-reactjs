@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Navbar from './components/Navbar/Navbar'
 import Inicio from './components/Pages/Inicio'
 import Items from './components/Pages/Items'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import CartWidget from './components/CartWidget/CartWidget'
 
 function App() {
   
@@ -15,6 +17,8 @@ function App() {
           <Route exact path="/" element={<Inicio/>}/>
           <Route exact path="/Items" element={<Items/>}/>
         </Routes>
+        <ItemListContainer/>
+        <CartWidget/>
       </Router>
     </div>
   );
