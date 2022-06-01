@@ -6,6 +6,7 @@ import Items from './components/Pages/Items'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import CartWidget from './components/CartWidget/CartWidget'
 
+
 function App() {
   
   return (
@@ -16,9 +17,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Inicio/>}/>
           <Route exact path="/Items" element={<Items/>}/>
+          <Route exact path="/CartWidget" element={<CartWidget/>}/>
         </Routes>
         <ItemListContainer/>
-        <CartWidget/>
       </Router>
     </div>
   );
