@@ -5,21 +5,21 @@ import CartWidget from '../CartWidget/CartWidget'
 const NavBar = () => {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div className="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
                     <Link to="/">
                         <img src='./iconopagina.png' width='50'></img>
                     </Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav mx-auto">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/" >Inicio</Link>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <Link class="nav-link" to="/" >Inicio</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/Items">Items</Link>
+                            <li class="nav-item">
+                                <Link class="nav-link" to="/Items">Items</Link>
                             </li>                   
                         </ul>
                         <CartWidget/>

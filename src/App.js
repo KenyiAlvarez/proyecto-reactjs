@@ -10,7 +10,7 @@ import CartWidget from './components/CartWidget/CartWidget'
 function App() {
   
   return (
-    <div className="App">
+    <div class="App">
       
       <Router>
         <Navbar/>
