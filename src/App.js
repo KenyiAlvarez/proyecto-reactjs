@@ -1,27 +1,24 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import Navbar from './components/Navbar/Navbar'
-import Inicio from './components/Pages/Inicio'
-import Items from './components/Pages/Items'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import CartWidget from './components/CartWidget/CartWidget'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Style/style.css"
+import { Nav } from "./components/NavBar/NavBar"
+import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer"
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 
 function App() {
-  
   return (
-    <div class="App">
-      
-      <Router>
-        <Navbar/>
+    <BrowserRouter>
+        <Nav/>
         <Routes>
-          <Route exact path="/" element={<Inicio/>}/>
-          <Route exact path="/Items" element={<Items/>}/>
-          <Route exact path="/CartWidget" element={<CartWidget/>}/>
+          <Route path='/' element={ <ItemListContainer/> } />
+          <Route path='/categorias/:categoryId' element={ <ItemListContainer/> } />
+          <Route path='/item/:itemId' element={ <ItemDetailContainer/> } /> 
+          <Route path='*' element={ <Navigate to={"/"}/> } />
         </Routes>
-        <ItemListContainer/>
-      </Router>
-    </div>
+
+    </BrowserRouter>
+    
+    
   );
 }
 

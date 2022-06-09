@@ -1,11 +1,17 @@
+import { Cards } from "../Cards/Cards"
 
-import React from 'react';
-import Item from '../Item/Item';
 
-const ItemList = ({data = []}) => {
-  return (
-    data.map(film => <Item key={film.id} info={film} />)
-  );
+export const ItemList = ( {items} ) =>{
+
+    return(
+        <div className="row">
+            <h2>Nuestros Productos</h2>
+
+            <hr/>
+            {
+                items.map((items) => <Cards key={items.id} items={items} />)
+            }
+        </div>
+
+    )
 }
-
-export default ItemList;
