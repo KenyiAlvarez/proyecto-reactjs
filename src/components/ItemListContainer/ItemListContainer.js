@@ -4,50 +4,43 @@ import { pedirDatos } from "../../mock/pedirDatos"
 import { ItemList } from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
 
-export const ItemListContainer = () =>{
-    
+export const ItemListContainer = () => {
+
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
-
     const { categoryId } = useParams()
-    console.log(categoryId)
-   
-    useEffect(() =>{
+
+    useEffect(() => {
         setLoading(true)
 
         pedirDatos()
-            .then((resp)=>{
-                    if(!categoryId){
-                        setItems( resp )
-                    }else{
-                        setItems( resp.filter( (item) => item.categoria === categoryId) )
-                    }
-        })
-        .catch( (error) =>{
-            console.log("ERROR",error)
-        })
-        .finally( ()=>{
-            setLoading(false)
-        })
+            .then((resp) => {
+                if (!categoryId) {
+                    setItems( resp )
+                } else {
+                    setItems( resp.filter((item) => item.categoria === categoryId) )
+                }
+            })
+            .catch((error) => {
+                console.log('ERROR', error)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     }, [categoryId])
 
-    return(
-        
-        <section className="cardsContainer container my-5">
-
+    return (
+        <section className="container my-5">
+            
             {
-                loading 
-                ?   <Spinner animation="border" role="status" className="spiner">
-                        <span className="visually-hidden"></span>
-                    </Spinner> 
+                loading
+                ?   <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
 
-                    : <ItemList items={items}/>
-                    
+                :  <ItemList items={items}/>
             }
             
         </section>
-
-
     )
-
 }
