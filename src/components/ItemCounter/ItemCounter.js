@@ -1,7 +1,7 @@
 
 
 
-const ItemCounter = ( {max, setCounter, counter, handleAgregar} ) => {
+export const ItemCounter = ( {max, setCounter, counter, handleAgregar} ) => {
 
     const handleSumar = () => {
         counter < max && setCounter(counter + 1)
@@ -19,9 +19,8 @@ const ItemCounter = ( {max, setCounter, counter, handleAgregar} ) => {
             <button onClick={handleSumar} className="btn btn-primary">+</button>
             <hr/>
 
-            <button onClick={handleAgregar} className="btn btn-success">Agregar al carrito</button>
+            <button onClick={handleAgregar} className="btn btn-dark">Agregar al carrito</button>
         </div>
     )
 }
 
-export default ItemCounter;
