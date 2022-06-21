@@ -8,18 +8,45 @@ export const ItemCounter = ( {max, setCounter, counter, handleAgregar} ) => {
     }
 
     const handleRestar = () => {
-        counter > 1 && setCounter(counter - 1)
+        counter > 0 && setCounter(counter - 1)
     }
     
+    if (max === 0) {
+        return (
+            <div className="my-3">
+                <p>NO HAY STOCK DE ESTE PRODUCTO</p>
+            </div>
+        )
+    }
     
     return (
         <div className="my-3">
-            <button onClick={handleRestar} className="btn btn-outline-primary">-</button>
+            <button 
+                onClick={handleRestar} 
+                className={counter === 0 ? "btn btn-outline-danger" : "btn btn-outline-primary"}
+                disabled={counter === 0}
+            >
+                -
+            </button>
+
             <span className="mx-2">{counter}</span>
-            <button onClick={handleSumar} className="btn btn-primary">+</button>
+
+            <button 
+                onClick={handleSumar} 
+                className={counter === max ? "btn btn-danger" : "btn btn-primary"}
+                disabled={counter ===max}
+            >
+                +
+            </button>
             <hr/>
 
-            <button onClick={handleAgregar} className="btn btn-dark">Agregar al carrito</button>
+            <button 
+                disabled={counter === 0}
+                onClick={handleAgregar} 
+                className="btn btn-dark"
+            >
+                Agregar al carrito
+            </button>
         </div>
     )
 }

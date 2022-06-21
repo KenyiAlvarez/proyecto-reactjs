@@ -4,6 +4,7 @@ import { ItemDetailContainer } from '../components/ItemDetailContainer/ItemDetai
 import { Navigate, Route, Routes } from "react-router-dom"
 import { Cart } from '../components/Cart/Cart';
 import { UserInfo } from "../components/UserInfo/UserInfo";
+import Footer from "../components/Footer/Footer";
 
 export const PrivateRoutes = () =>{
 
@@ -18,6 +19,7 @@ export const PrivateRoutes = () =>{
                     <Route path='/cart' element={ <Cart/> } /> 
                     <Route path='*' element={ <Navigate to={"/"}/> } />
                 </Routes>
+            <Footer/>
         </>
     )
 }
