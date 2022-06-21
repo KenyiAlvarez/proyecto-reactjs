@@ -24,7 +24,10 @@ export const Cart = () =>{
 
             <div className="container my-5 detail">
                 <p>Total del Carrito</p>
+                
+                    
                 <hr/>
+
                 <h4>Total: €{totalPrice()}</h4>
             </div>
 
